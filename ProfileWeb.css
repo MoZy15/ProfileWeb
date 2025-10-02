@@ -1,0 +1,63 @@
+/*Nav Links Section */
+.nav-links{
+    
+    text-align: center;
+    position: fixed;     /* Keeps it at the top */
+    top: 0;              /* Aligns to the top of the page */
+    left: 0;
+    width: 100%;         /* Full width */
+    background: #fff;    /* Background so text doesn’t overlap content */
+    padding: 10px 0;
+    z-index: 1000;       /* Ensures it stays above other elements */
+}
+.nav-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;           /* Align links horizontally */
+    justify-content: center; /* Center them */
+    gap: 20px;               /* Add spacing between items */
+}
+.nav-links ul li a{
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 8px;
+    background-color: #0077cc;
+    
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+.nav-links ul li a:hover{
+    color: rgb(213, 24, 24);
+    font-size: large;
+}
+/*Main Links Section */
+.main-links ul {
+    list-style-type: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;           /* Align links horizontally */
+    justify-content: center; /* Center them */
+    gap: 20px;               /* Add spacing between items */
+}
+.main-links ul li a{
+    text-decoration: none;
+    color: black;
+    display: inline-flex; /* lets us center text */
+    align-items: center;
+    justify-content: center;
+    width: 90px;                   /* same width */
+    height: 90px;                  /* same height */
+    border-radius: 50%;            /* makes it circular */
+    
+    background-color: #0077cc;
+    font-size: 14px;               /* adjust to fit inside */
+    transition: background-color 0.3s;
+}
+.main-links ul li a:hover{
+    color: rgb(213, 24, 24);
+    font-size: large;
+}
