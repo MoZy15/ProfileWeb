@@ -137,10 +137,16 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 3rem;
-    color: var(--primary);
     border: 5px solid white;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Important for circular image */
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the circle properly */
+    border-radius: 50%;
 }
 
 .profile-title {
