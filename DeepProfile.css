@@ -51,7 +51,7 @@ body {
     margin: 0 auto;
     padding: 0 20px;
 }
-/* Mobile Navigation */
+/* Mobile Navigation 
 .nav-toggle {
     display: none;
     background: none;
@@ -59,7 +59,7 @@ body {
     color: white;
     font-size: 1.5rem;
     cursor: pointer;
-}
+}*/
 /* Navigation Menu */
 .main-links {
     padding: 15px 0;
@@ -491,5 +491,125 @@ footer {
     .contact-info {
         flex-direction: column;
         gap: 2rem;
+    }
+}
+/* Add to your existing CSS */
+body {
+    padding-top: 70px; /* Reduced for mobile */
+}
+
+/* Mobile Navigation */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Mobile Timeline */
+.timeline::after {
+    left: 20px;
+}
+
+.timeline-item {
+    padding: 15px 0 15px 50px;
+    width: 100%;
+}
+
+.timeline-item::after {
+    left: 12px;
+    right: auto;
+}
+
+/* Mobile Skills Grid */
+.skills-grid {
+    grid-template-columns: 1fr;
+}
+
+/* Mobile Media Queries */
+@media (max-width: 480px) {
+    body {
+        padding-top: 60px;
+    }
+    
+    .profile-title {
+        font-size: 1.7rem;
+    }
+    
+    .contact-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .contact-btn {
+        width: 100%;
+        max-width: 250px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+    }
+    
+    .main-links ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        padding: 1rem;
+    }
+    
+    .main-links ul.active {
+        display: flex;
+    }
+    
+    .main-links li {
+        margin: 5px 0;
+        width: 100%;
+    }
+    
+    .main-links a {
+        display: block;
+        padding: 10px 15px;
+        text-align: center;
+    }
+}
+
+@media (min-width: 769px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .timeline::after {
+        left: 50%;
+    }
+    
+    .timeline-item {
+        padding: 10px 40px;
+        width: 50%;
+    }
+    
+    .timeline-item:nth-child(odd) {
+        left: 0;
+    }
+    
+    .timeline-item:nth-child(even) {
+        left: 50%;
+    }
+    
+    .timeline-item::after {
+        left: auto;
+        right: -8px;
+    }
+    
+    .timeline-item:nth-child(even)::after {
+        left: -8px;
     }
 }
