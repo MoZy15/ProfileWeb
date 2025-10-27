@@ -132,3 +132,50 @@ let currentLanguage = 'de';
                 }
             });
         });
+        // Add this to your JavaScript - Mobile image handling
+function checkMobileImage() {
+    const profileImg = document.querySelector('.profile-photo');
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    if (isMobile && profileImg) {
+        console.log('Mobile device detected');
+        
+        // Force image reload for mobile
+        const originalSrc = profileImg.src;
+        profileImg.src = '';
+        profileImg.src = originalSrc;
+        
+        // Mobile-specific error handling
+        profileImg.onerror = function() {
+            console.log('Mobile: Image failed, using fallback');
+            useInitialsFallback();
+        };
+        
+        // Check if loaded after a delay
+        setTimeout(() => {
+            if (!profileImg.complete || profileImg.naturalHeight === 0) {
+                console.log('Mobile: Image not loaded, using fallback');
+                useInitialsFallback();
+            }
+        }, 1000);
+    }
+}
+
+function useInitialsFallback() {
+    const profileImageDiv = document.querySelector('.profile-image');
+    if (profileImageDiv) {
+        profileImageDiv.innerHTML = 'MA';
+        profileImageDiv.style.display = 'flex';
+        profileImageDiv.style.alignItems = 'center';
+        profileImageDiv.style.justifyContent = 'center';
+        profileImageDiv.style.color = 'var(--primary)';
+        profileImageDiv.style.fontSize = '2.5rem';
+        profileImageDiv.style.fontWeight = 'bold';
+        profileImageDiv.style.backgroundColor = 'var(--light)';
+    }
+}
+
+// Call this on page load
+document.addEventListener('DOMContentLoaded', function() {
+    checkMobileImage();
+});
