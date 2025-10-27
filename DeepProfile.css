@@ -267,7 +267,9 @@ main {
     margin-top: 80px;
     
 }
-
+.production-image{
+    
+}
 .timeline-content h3 {
     color: var(--accent);
     margin-bottom: 0.5rem;
