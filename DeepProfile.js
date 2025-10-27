@@ -1,3 +1,8 @@
+// Mobile navigation toggle
+const navToggle = document.getElementById('navToggle');
+const navMenu = document.getElementById('navMenu');
+
+
 let currentLanguage = 'de';
         let lastScrollTop = 0;
         const fixedNav = document.getElementById('fixedNav');
@@ -97,4 +102,33 @@ let currentLanguage = 'de';
         // Initialize language
         document.addEventListener('DOMContentLoaded', function() {
             updateLanguage();
+        });
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.main-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+        
+        // Update smooth scrolling offset for mobile
+        document.querySelectorAll('.main-links a, .contact-btn').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    if (targetSection) {
+                        window.scrollTo({
+                            top: targetSection.offsetTop - 70, // Reduced offset for mobile
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
         });

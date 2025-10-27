@@ -19,7 +19,7 @@ body {
     background-color: #f9f9f9;
     color: #333;
     line-height: 1.6;
-    padding-top: 80px; /* Space for fixed navigation */
+    padding-top: 70px; /* Space for fixed navigation */
 }
 
 .container {
@@ -51,7 +51,15 @@ body {
     margin: 0 auto;
     padding: 0 20px;
 }
-
+/* Mobile Navigation */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
 /* Navigation Menu */
 .main-links {
     padding: 15px 0;
@@ -228,7 +236,8 @@ main {
     background-color: var(--light);
     top: 0;
     bottom: 0;
-    left: 50%;
+    left: 12px;
+    right: auto;
     margin-left: -2px;
 }
 
